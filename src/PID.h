@@ -16,6 +16,16 @@ public:
   double Kp;
   double Ki;
   double Kd;
+    
+  /*
+   * Sum of all CTEs
+   */
+  double sum_cte;
+    
+  /*
+   * Previous cte
+   */
+  double prev_cte;
 
   /*
   * Constructor
