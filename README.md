@@ -3,6 +3,13 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Running code with Twiddle
+I have implemented twiddle in PID::Update(double cte) function. To execute the program with Twiddle, pleasse make the following changes to the code and recompile.
+
+1. Uncomment line 38 in main.cpp
+2. Comment line 42 in main.cpp
+3. Set PID::doTwiddle flag to false in line 29 in PID.cpp
+
 ## Dependencies
 
 * cmake >= 3.5
