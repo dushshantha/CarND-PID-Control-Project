@@ -34,7 +34,11 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  pid.Init(0.1,0.002, 4.0);
+  // Uncomment below line to run Twiddle
+  //pid.Init(0.1,0.002, 4.0);
+
+  //These are teh values i got from Twiddle
+  pid.Init(0.126346, 0.0010732, 5.98254);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -59,7 +63,7 @@ int main()
           * another PID controller to control the speed!
           */
             
-          pid.UpdateError(cte);
+          pid.Update(cte);
           steer_value = pid.TotalError();
             
           
