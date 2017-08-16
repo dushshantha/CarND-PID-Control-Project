@@ -37,7 +37,8 @@ int main()
   // Uncomment below line to run Twiddle
   //pid.Init(0.1,0.002, 4.0);
 
-  //These are teh values i got from Twiddle
+  //These are the values i got from Twiddle
+  //Comment below line if you like to run Twiddle 
   pid.Init(0.126346, 0.0010732, 5.98254);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
