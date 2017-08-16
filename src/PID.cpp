@@ -26,7 +26,7 @@ void PID::Init(double Kp, double Ki, double Kd) {
     PID::tol = 0.0000001;
     
     //Set the below flag to true to run Twiddle
-    PID::doTwiddle = true;
+    PID::doTwiddle = false;
     
     PID::p = {0.0, 0.0, 0.0};
     //PID::dp = {1, 1, 1};

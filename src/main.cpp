@@ -35,14 +35,14 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   // Uncomment below line to run Twiddle
-  pid.Init(0.01,0.0001, 0.4);
+  //pid.Init(0.01,0.0001, 0.4);
 
   //These are the values i got from Twiddle
   //Comment below line if you like to run Twiddle 
   //pid.Init(0.126346, 0.0010732, 5.98254);
     
     //pid.Init(0.105607,0.00159403,3.97543)
-    //pid.Init(0.0867412 , 0.000973738 , 4.00377);
+  pid.Init(0.0867412 , 0.000973738 , 4.00377);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
