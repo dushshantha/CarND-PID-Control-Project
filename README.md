@@ -3,6 +3,31 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 ## Introduction
+The purpose of this project is to implement a simple PID controller with Twiddle Parameter optimization. 
+
+## Reflection
+A proportional–integral–derivative controller (PID controller or three term controller) is a control loop feedback mechanism (controller) widely used in industrial control systems and a variety of other applications requiring continuously modulated control. A PID controller continuously calculates an error value e(t) as the difference between a desired setpoint and a measured process variable and applies a correction based on proportional, integral, and derivative terms (sometimes denoted P, I, and D respectively) which give their name to the controller type. In this project we use the cross-track error (cte) as the error and apply PID controller to calculate the Steering angle. 
+
+### P (proportional)
+In the P term of the algorythm, The steering angle will be calculated in propotion to the error. This leads to a lot of Overshoot.
+
+### I (Integral)
+In the integral term of PID Controller, the steering angle increases in relation not only to the error but also the time for which it has persisted. This this case, the we calculate the sum of all the errors and calculate the new angle with regard to the sum. I term alone can bring the error down to 0 eventually but it it will start slow and react quickly when the time passes. 
+
+### D (Derivative)
+The D term of the controller does not consider the error, but the rate of change of the error. This term tries to bring the rate of change of the error to zero which means to keep the error on a straight line. 
+
+Taking all three terms together, the controller tries to bring the error down to 0 and keep it that way hense the car in our case will be in the center of the lane all the time. 
+
+(Unfortunately I was not able to capture Video segments to demonstrate as my Simulator for some reason didnt let me record.)
+
+## Hyperparameters
+I used Twiddle to choose the hyper parameters in my project. I implemented Twiddle in PID.cpp file under the Update function.  My final parameters are as follows
+
+Kp: 0.0867412 
+Ki: 0.000973738 
+Kd: 4.00377
+
 ## Running code with Twiddle
 I have implemented twiddle in PID::Update(double cte) function. To execute the program with Twiddle, pleasse make the following changes to the code and recompile.
 
